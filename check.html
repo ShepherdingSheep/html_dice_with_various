@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="material/math.js"></script>
+</head>
+<body>
+    <div id="pan">
+    </div>
+    <input id="dice_num" type="number" placeholder="굴릴 주사위 갯수"><button onclick="roll()">굴리기</button>
+    <script>
+        var n = 0;
+        var n_1 = n_2 = n_3 = n_4 = n_5 = n_6 = n_7 = n_8 = n_9 = n_10 = n_all = 0;
+        var dice = 1000
+        var interval = setInterval(function(){
+            number();
+        }, 10);
+        setTimeout(function(){clearInterval(interval)}, dice*10);
+        function roll(){
+            dice = Math.floor(document.getElementById('dice_num').value);
+            n_1 = n_2 = n_3 = n_4 = n_5 = n_6 = n_7 = n_8 = n_9 = n_10 = n_all = 0;
+            interval = setInterval(function(){number();}, 10);
+            setTimeout(function(){clearInterval(interval)}, dice*10);
+        }
+        function number(){
+            n = math.randomInt(0, 100)%5+1;
+        switch(n){
+            case 1:
+                n_1 += 1;
+                break;
+            case 2:
+                n_2 += 1;
+                break;
+            case 3:
+                n_3 += 1;
+                break;
+            case 4:
+                n_4 += 1;
+                break;
+            case 5:
+                n_5 += 1;
+                break;
+            case 6:
+                n_6 += 1;
+                break;
+            default:
+                n_all += 1;
+                break;};
+            document.getElementById('pan').innerHTML = '<div> 1: '+n_1+'</div>';
+            document.getElementById('pan').innerHTML += '<div> 2: '+n_2+'</div>';
+            document.getElementById('pan').innerHTML += '<div> 3: '+n_3+'</div>';
+            document.getElementById('pan').innerHTML += '<div> 4: '+n_4+'</div>';
+            document.getElementById('pan').innerHTML += '<div> 5: '+n_5+'</div>';
+            document.getElementById('pan').innerHTML += '<div> 6: '+n_6+'</div>';
+            console.log(n)
+        };
+    </script>
+</body>
+</html>

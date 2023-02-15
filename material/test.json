@@ -1,0 +1,22 @@
+{
+    "type": "module",
+    "dice":
+    [
+        {
+            "name": "odd",
+            "num": [-1, 1, 3]
+        },
+        {
+            "name": "even",
+            "num": [-2, 2, 4]
+        },
+        {
+            "name": "slow",
+            "num": [-1, 1, 2]
+        },
+        {
+            "name": "fast",
+            "num": [2, 3, 4]
+        }
+    ]
+}

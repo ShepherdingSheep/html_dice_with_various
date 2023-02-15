@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리듬마블 주사위 - 편굴맨의 습격</title>
+    <link href="material/dice style.css" rel="stylesheet">
+    <link href="material/multi dice select style.css" rel="stylesheet">
+    <style>
+        article{
+            padding-bottom: 50px;
+        }
+    </style>
+    <script src="material/math.js" type="text/javascript"></script>
+</head>
+<body>
+    <article id="alert">
+        <div class="sta_head">주사위 당첨 현황</div>
+        <div class="sta_body">
+            <p class="sta_line" style="line-height: 30px;">싱글, 전진 주사위 반영</p>
+            <p class="sta_line sta_minus">-1: <span id="sta_mone">0</span></p>
+            <p class="sta_line sta_nugul">편굴맨: <span id="sta_five">0</span></p>
+            <p class="sta_line">1: <span id="sta_one">0</span></p>
+            <p class="sta_line">2: <span id="sta_two">0</span></p>
+            <p class="sta_line">3: <span id="sta_three">0</span></p>
+            <p class="sta_line">4: <span id="sta_four">0</span></p>
+            <p class="sta_line">현재 주사위 <span class="normal" id="sta_type">정속주행</span>(<span class="normal" id="sta_meter">0.0</span>) 중</p>
+        </div>
+        <div class="sta_tail">
+            <button class="sta_tail_but reset" id="proreset" onclick="proreset()">초기화</button>
+            <button class="sta_tail_but" id="proexit" onclick="proexit()">닫기</button>
+        </div>
+    </article>
+    <article id="dice_pan" onclick="roll()">
+        <div id="dice" class="start single">
+            <div id="dice_1"><img src="./material/num_1.png" id="img_1" /></div>
+            <div id="dice_2"><img src="./material/num_2.png" id="img_2" /></div>
+            <div id="dice_3"><img src="./material/num_3.png" id="img_3" /></div>
+            <div id="dice_4"><img src="./material/num_4.png" id="img_4" /></div>
+            <div id="dice_5"><img src="./material/num_nugul.png" id="img_5" /></div>
+            <div id="dice_6"><img src="./material/num_back.png" id="img_6" /></div>        
+        </div>
+        <div id="status">
+            <div id="s_number">?</div>
+        </div>
+    </article>
+    <article id="dice_button">
+        <div id="b_collection">
+            <button class="button_bot" id="double" onclick="dividedice()">
+                <div id="ddimg"><img src="./material/double_dice.png" width="50px"></div>
+                <div id="ddtext">주사위 나누기</div>
+            </button>
+            <button class="button_bot" id="but_refresh" onclick="refresh()">
+                <div id="reimg"><img src="./material/reload.png" width="50px"></div>
+                <div id="retext">주사위 초기화</div>
+            </button>
+            <button class="button_bot" id="but_selectdice" onclick="sdice()">
+                <div id="ifimg"><img src="./material/browse_dice.png" width="50px"></div>
+                <div id="iftext">주사위 선택</div>
+            </button>
+            <button class="button_bot" id="but_prosta" onclick="prosta()">
+                <div id="proimg"><img src="./material/probablity.png" width="50px"></div>
+                <div id="protext">주사위 현황</div>
+            </button>
+        </div>
+    </article>
+    <script src="material/multi_dice/multiscript.js"></script>
+    <script src="material/multi_dice/diceselect.js"></script>
+</body>
+</html>

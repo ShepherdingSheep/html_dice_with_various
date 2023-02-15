@@ -1,0 +1,327 @@
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'LINESeedKR-Bd';
+    user-select: none;
+}
+
+article{
+    padding: 200px;
+    padding-bottom: 200px;
+    width: 300px;
+    height: 300px;
+}
+
+article#dice_button{
+    width: 500px;
+    padding: 100px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#dice{
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+}
+
+.dice_d{
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+}
+
+#dice_d2{
+    top: calc(50% - 75px);
+    left: calc(50% + 75px);
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    float: right;
+}
+
+.start{
+    animation: rotates 4s linear infinite;
+}
+
+.reroll {
+    animation: rotates 1s linear 2;
+}
+
+@keyframes rotates{
+    0%{
+        transform: rotateX(0) rotateZ(0);
+    }
+    50%{
+        transform: rotateX(360deg) rotateZ(180deg);
+    }
+    100%{
+        transform: rotateX(720deg) rotateZ(360deg);
+    }
+}
+.bonk{
+    animation: bonks 0.3s linear 1;
+}
+@keyframes bonks{
+    0%{
+        transform: rotateX(360deg) rotateY(180deg) rotateZ(180deg);
+    }
+    50%{
+        transform: rotateX(270deg) rotateY(180deg) rotateZ(180deg);
+    }
+    100%{
+        transform: rotateX(90deg) rotateY(180deg) rotateZ(180deg);
+    }
+}
+#dice > div{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    text-align: center;
+    line-height: 290px;
+    font-size: 70pt;
+    background-image: url(./box_new.png);
+    animation: herelight 6s linear infinite;
+}
+.dice_d > div{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    text-align: center;
+    line-height: 145px;
+    font-size: 70pt;
+    background-image: url(./box_new.png);
+    animation: herelight 6s linear infinite;
+    background-size: 150px;
+}
+#dice.reroll > div, #dice_d1.reroll > div, #dice_d2.reroll > div{
+    animation: herelight 1s linear infinite;
+}
+
+@keyframes herelight{
+    0%{
+        background-color: #164e67;
+    }
+
+    10%{
+        background-color: #769d30;
+    }
+
+    20%{
+        background-color: #c8d71a;
+    }
+
+    30%{
+        background-color: #38abda;
+    }
+    
+    40%{
+        background-color: #f0973b;
+    }
+
+    50%{
+        background-color: #faed2f;
+    }
+
+    60%{
+        background-color: #8a2b7c;
+    }
+
+    70%{
+        background-color: #ec9b40;
+    }
+
+    80%{
+        background-color: crimson;
+    }
+
+    90%{
+        background-color: red;
+    }
+    
+    100%{
+        background-color: #164e67;
+    }
+}
+
+.dice_d > div > img{
+    width: 150px;
+    height: 150px;
+    padding: 0;
+}
+#dice_1{
+    transform: translateZ(150px) perspective(300px);
+}
+.dice_d>#dice_1{
+    transform: translateZ(75px) perspective(150px);
+}
+#dice_2{
+    transform: translateY(150px) rotateX(90deg) rotateY(180deg) perspective(300px);
+}
+.dice_d>#dice_2{
+    transform: translateY(75px) rotateX(90deg) rotateY(180deg) perspective(150px);
+}
+#dice_3{
+    transform: translateX(150px) rotateY(90deg) perspective(300px);
+}
+.dice_d>#dice_3{
+    transform: translateX(75px) rotateY(90deg) perspective(150px);
+}
+#dice_4{
+    transform: translateX(-150px) rotateY(-90deg) perspective(300px);
+}
+.dice_d>#dice_4{
+    transform: translateX(-75px) rotateY(-90deg) perspective(150px);
+}
+#dice_5{
+    transform: translateY(-150px) rotateX(90deg) perspective(300px);
+}
+.dice_d>#dice_5{
+    transform: translateY(-75px) rotateX(90deg) perspective(150px);
+}
+#dice_6{
+    transform: translateZ(-150px) rotateY(180deg) perspective(300px);
+}
+.dice_d>#dice_6{
+    transform: translateZ(-75px) rotateY(180deg) perspective(150px);
+}
+#status{
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    width: 300px;
+    font-size: 20pt;
+    text-align: center;
+}
+
+#s_number{
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0, 180, 255, 0.3) 30%, rgba(0, 180, 255, 1) 50%, rgba(0, 180, 255, 0.3) 70%, rgba(0,0,0,0) 100%);
+    width: 300px;
+    height: 100px;
+    font-size: 60pt;
+    line-height: 110px;
+    color: red;
+    font-family: 'Cafe24Ssurround';
+    font-weight: 600;
+    display: inline-block;
+}
+
+.button_bot{
+    border: 1px outset black;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.button_bot:hover{
+    background-color:rgba(0, 180, 255, 0.3);
+}
+
+.button_bot:active{
+    background-color: darkblue;
+}
+
+#b_collection{
+    visibility: visible;
+}
+
+.probable{
+    background-color: white;
+}
+
+article#alert{
+    visibility: hidden;
+    width: 400px;
+    height: 360px;
+    position: fixed;
+    top: 150px;
+    left: 150px;
+    z-index: 1000;
+    box-shadow: 3px 3px 3px black;
+    padding: 0;
+}
+
+div.sta_head{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: darkcyan;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-size: 14pt;
+}
+
+div.sta_body{
+    width: 100%;
+    height: 280px;
+    background-color: azure;
+    text-align: center;
+}
+
+div.sta_tail{
+    width: 100%;
+    height: 50px;
+    background-color: azure;
+    text-align: center;
+}
+
+button.sta_tail_but{
+    width: 100px;
+    height: 30px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+button.sta_tail_but:active{
+    width: 100px;
+    height: 30px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px black;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+button.sta_tail_but.reset{
+    margin-right: 50px;
+    background-color: brown;
+}
+
+button.sta_tail_but.reset:active{
+    background-color: brown;
+}
+
+p.sta_line{
+    line-height: 12px;
+    font-size: 15pt;
+    padding: 10px 0;
+}
+
+p.sta_minus{
+    color: brown;
+}
+
+p.sta_nugul{
+    color: goldenrod;
+}

@@ -1,0 +1,260 @@
+#dice_pan.shop {
+    margin: 0;
+    padding: 0;
+    width: 700px;
+    height: 550px;
+}
+
+.dice_information{
+    display: flex;
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    padding: 0 50px;
+    color: #565656;
+}
+
+.information__image{
+    display: inline-block;
+    width: 200px;
+}
+
+.information__text{
+    display: inline-block;
+    width: 400px;
+}
+
+.information__name{
+    font-size: 25pt;
+    margin: 15px 0;
+}
+
+.information__image > img{
+    height: 180px;
+}
+
+.number__img{
+    display: inline-block;
+    width: 15%;
+}
+
+.dice_select_row{
+    width: 700px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice_select{
+    display: inline-block;
+}
+
+.dice_select > img{
+    width: 120px;
+    max-height: 200px;
+    margin: 5px;
+    opacity: 50%;
+}
+
+.dice_select > img:hover{
+    opacity: 100%;
+}
+
+#dice.odd > div{
+    background-image: url('./multi_dice/dice_back/back_odd.png');
+    animation: odddice 4s linear infinite;
+}
+
+#dice.odd.reroll > div{
+    animation: odddice 0.4s linear infinite;
+}
+
+@keyframes odddice{
+    0%{
+        background-color: aquamarine;
+    }
+    25%{
+        background-color: dodgerblue;
+    }
+    50%{
+        background-color: navy;
+    }
+    75%{
+        background-color: darkcyan;
+    }
+    100%{
+        background-color: aquamarine;
+    }
+}
+
+#dice.even > div{
+    background-image: url('./multi_dice/dice_back/back_even.png');
+    animation: evendice 4s linear infinite;
+}
+
+#dice.even.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_even.png');
+    animation: evendice 0.4s linear infinite;
+}
+
+@keyframes evendice{
+    0%{
+        background-color: hotpink;
+    }
+    25%{
+        background-color: coral;
+    }
+    50%{
+        background-color: red;
+    }
+    75%{
+        background-color: darkred;
+    }
+    100%{
+        background-color: hotpink;
+    }
+}
+
+#dice.golden > div{
+    background-image: url('./multi_dice/dice_back/back_golden.png');
+}
+
+#dice.daruma > div{
+    background-image: url('./multi_dice/dice_back/back_daruma.png');
+    animation: darumadice 4s linear infinite;
+}
+
+#dice.daruma.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_daruma.png');
+    animation: darumadice 0.3s linear infinite;
+}
+
+@keyframes darumadice{
+    0%{
+        background-color: lightpink;
+    }
+
+    25%{
+        background-color: lightsalmon;
+    }
+
+    50%{
+        background-color: black;
+    }
+
+    75%{
+        background-color: lightcoral;
+    }
+
+    100%{
+        background-color: lightpink;
+    }
+}
+
+#dice.slow > div{
+    background-image: url('./multi_dice/dice_back/back_slow.png');
+    animation: slowdice 4s alternate infinite;
+}
+
+#dice.slow.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_slow.png');
+    animation: slowdice 0.4s alternate infinite;
+}
+
+@keyframes slowdice{
+    0%{
+        background-color: olive;
+    }
+
+    33%{
+        background-color: lightgreen;
+    }
+
+    50%{
+        background-color: darkolivegreen
+    }
+
+    66%{
+        background-color: greenyellow;  
+    }
+
+    100%{
+        background-color: darkgreen;
+    }
+}
+
+#dice.fast > div{
+    background-image: url('./multi_dice/dice_back/back_fast.png');
+    animation: odddice 4s alternate infinite;
+}
+
+#dice.fast.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_fast.png');
+    animation: odddice 0.4s alternate infinite;
+}
+
+#dice.back > div{
+    background-image: url('./multi_dice/dice_back/back_back.png');
+    animation: darumadice 4s linear infinite;
+}
+
+#dice.back.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_back.png');
+    animation: darumadice 0.3s linear infinite;
+}
+
+#dice.joker > div{
+    background-image: url('./multi_dice/dice_back/back_joker.png');
+    animation: jokerdice 4s linear infinite;
+}
+
+#dice.joker.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_joker.png');
+    animation: jokerdice 0.3s linear infinite;
+}
+
+@keyframes jokerdice{
+    0%{
+        background-color: black;
+    }
+
+    33%{
+        background-color: goldenrod;
+    }
+
+    66%{
+        background-color: brown;
+    }
+
+    100%{
+        background-color: black;
+    }
+}
+
+#dice.shield > div{
+    background-image: url('./multi_dice/dice_back/back_emergency.png');
+    animation: shielddice 2s linear infinite;
+}
+
+#dice.shield.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_emergency.png');
+    animation: shielddice 0.3s linear infinite;
+}
+
+@keyframes shielddice{
+    0%{
+        background-color: red;
+    }
+    50%{
+        background-color: blue;
+    }
+    100%{
+        background-color: red;
+    }
+}
+
+.dice_select_row > div{
+    cursor: pointer;
+}

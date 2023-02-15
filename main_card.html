@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리듬마블 시드런</title>
+    <link href="./material/card style.css" rel="stylesheet">
+</head>
+<body id="element">
+    <article class="cardarea">
+        <div class="cardarea__card" id="card_1" onclick="turn(1)" onmouseover="direction_on(1)" onmouseleave="direction_off(1)"><img src="./material/num_1.png" width="100px" class="card__img" id="img_1"></div>
+        <div class="cardarea__card" id="card_2" onclick="turn(2)" onmouseover="direction_on(2)" onmouseleave="direction_off(2)"><img src="./material/num_2.png" width="100px" class="card__img" id="img_2"></div>
+        <div class="cardarea__card" id="card_3" onclick="turn(3)" onmouseover="direction_on(3)" onmouseleave="direction_off(3)"><img src="./material/num_3.png" width="100px" class="card__img" id="img_3"></div>
+        <div class="cardarea__card" id="card_4" onclick="turn(4)" onmouseover="direction_on(4)" onmouseleave="direction_off(4)"><img src="./material/num_4.png" width="100px" class="card__img" id="img_4"></div>
+        <div class="cardarea__card" id="card_5" onclick="turn(5)" onmouseover="direction_on(5)" onmouseleave="direction_off(5)"><img src="./material/num_back.png" width="100px" class="card__img" id="img_5"></div>
+    </article>
+    <article class="buttonzone">
+        <div class="buttonarea">
+            <button class="buttonarea__button button__used" id="button_1" onclick="turn(1)">사용됨</button>
+            <button class="buttonarea__button button__used" id="button_2" onclick="turn(2)">사용됨</button>
+            <button class="buttonarea__button button__used" id="button_3" onclick="turn(3)">사용됨</button>
+            <button class="buttonarea__button button__used" id="button_4" onclick="turn(4)">사용됨</button>
+            <button class="buttonarea__button button__used" id="button_5" onclick="turn(5)">사용됨</button>
+        </div>
+    </article>
+    <article class="directionarea">
+        <div class="directionarea__direction" id="direction_1">△</div>
+        <div class="directionarea__direction" id="direction_2">△</div>
+        <div class="directionarea__direction" id="direction_3">△</div>
+        <div class="directionarea__direction" id="direction_4">△</div>
+        <div class="directionarea__direction" id="direction_5">△</div>
+    </article>
+    <div class="rerollbutton">
+        <button class="rerollbutton__button" id="button_reroll" onclick="reroll()">카드 다시 정렬</button>
+    </div>
+    <script src="./material/card script.js"></script>
+</body>
+</html>

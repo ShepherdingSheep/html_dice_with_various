@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="material/dice style.css" rel="stylesheet">
+    <script src="material/math.js" type="text/javascript"></script>
+</head>
+<body>
+    <article id="dice_pan" onclick="roll()">
+        <div id="dice" class="start">
+            <div id="dice_1"><img src="./material/num_1.png" /></div>
+            <div id="dice_2"><img src="./material/num_2.png" /></div>
+            <div id="dice_3"><img src="./material/num_3.png" /></div>
+            <div id="dice_4"><img src="./material/num_4.png" /></div>
+            <div id="dice_5"><img src="./material/num_2.png" /></div>
+            <div id="dice_6"><img src="./material/num_back.png" /></div>        
+        </div>
+        <div id="status">
+            <div id="s_number">?</div>
+        </div>
+    </article>
+    <article id="dice_button" onmouseover="opensesame()" onmouseleave="closesesame()">
+        <div id="b_collection">
+            <button class="button_bot" id="double" onclick="dividedice()">
+                <div id="ddimg"><img src="./material/single_dice.png" width="50px"></div>
+                <div id="ddtext">Single Dice</div>
+            </button>
+            <button class="button_bot" id="refresh" onclick="refresh()">
+                <div id="ddimg"><img src="./material/reload.png" width="50px"></div>
+                <div id="ddtext">Refresh</div>
+            </button>
+            <button class="button_bot" id="but_prosta" onclick="prosta()">
+                <div id="ifimg"><img src="./material/probablity.png" width="50px"></div>
+                <div id="iftext">Current Status</div>
+            </button>
+        </div>
+    </article>
+    <script src="material/script.js"></script>
+</body>
+</html>

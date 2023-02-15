@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'Godo M';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./godoFont_all/GodoM.ttf') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Godo B';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./godoFont_all/GodoB.ttf') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+}
+
+* {
+    font-family: 'Godo M';
+    font-size: 12pt;
+    user-select:none;
+}
+
+.rerollbutton{
+    margin-top: 5px;
+}
+
+.cardarea__card{
+    display: inline-block;
+    width: 100px;
+    height: 200px;
+    background-color: cornflowerblue;
+    border: 4px solid dodgerblue;
+    border-radius: 4px;
+    transform: rotateY(0deg) perspective(108px);
+}
+
+.cardarea__card:hover{
+    border: 4px solid orangered;
+}
+
+.card__open:hover{
+    border: 4px solid dodgerblue;
+}
+
+.card__img{
+    margin-top: 50px;
+}
+
+.card__hidden{
+    visibility: hidden;
+}
+
+.card__open{
+    background-image: linear-gradient(to bottom, white 0%, #dddddd 100%);
+}
+
+@keyframes turnAround {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    30%{
+        transform: rotateY(70deg);
+    }
+
+    50%{
+        transform: rotateY(90deg);
+    }
+
+    70%{
+        transform: rotateY(70deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.card__turn{
+    animation: turnAround 2s linear 1;
+}
+
+.buttonarea{
+    margin-top: 5px;
+}
+
+.buttonarea__button{
+    width: 108px;
+    background-color: orange;
+    border: 2px solid crimson;
+    border-radius: 4px;
+}
+
+.buttonarea__button:hover{
+    background-color: darkorange;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.button__used{
+    background-color: #777777;
+    color: black;
+    border: 2px solid black;
+}
+
+.button__used:hover{
+    background-color: #777777;
+    color: black;
+    border: 2px solid black;
+}
+
+.button__rerolling{
+    background-color: greenyellow;
+    border: 2px dotted green;
+}
+
+.directionarea__direction{
+    display: inline-block;
+    width: 108px;
+    height: 30px;
+    text-align: center;
+    color: orangered;
+    font-size: 16pt;
+    line-height: 30px;
+}
+
+.rerollbutton__button{
+    width: 565px;
+    height: 60px;
+    font-size: 18pt;
+}
