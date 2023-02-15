@@ -698,3 +698,32 @@ const dicemarket = (num) => {
             break
     }
 }
+
+function preloading (imageArray) {
+    let imgArr_L = imageArray.length;
+    for (let i = 0; i < imgArr_L; i++) {
+        let img = new Image();
+        img.src = imageArray[i];
+    }
+}
+
+preloading([
+    './material/multi_dice/dice_back/back_back.png',
+    './material/multi_dice/dice_back/back_daruma.png',
+    './material/multi_dice/dice_back/back_emergency.png',
+    './material/multi_dice/dice_back/back_even.png',
+    './material/multi_dice/dice_back/back_fast.png',
+    './material/multi_dice/dice_back/back_golden.png',
+    './material/multi_dice/dice_back/back_joker.png',
+    './material/multi_dice/dice_back/back_odd.png',
+    './material/multi_dice/dice_back/back_slow.png',
+    './material/multi_dice/dice_back/back_back.png',
+    './material/multi_dice/dice_image/back_dice.png',
+    './material/multi_dice/dice_image/daruma_dice.png',
+    './material/multi_dice/dice_image/even_dice.png',
+    './material/multi_dice/dice_image/fast_dice.png',
+    './material/multi_dice/dice_image/golden_dice.png',
+    './material/multi_dice/dice_image/joker_dice.png',
+    './material/multi_dice/dice_image/none_dice.png',
+    './material/multi_dice/dice_image/slow_dice.png'
+])
