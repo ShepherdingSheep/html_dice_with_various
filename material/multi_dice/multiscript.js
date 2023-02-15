@@ -725,6 +725,8 @@ preloading([
     './material/multi_dice/dice_image/golden_dice.png',
     './material/multi_dice/dice_image/joker_dice.png',
     './material/multi_dice/dice_image/none_dice.png',
+    './material/multi_dice/dice_image/odd_dice.png',
+    './material/multi_dice/dice_image/shield_dice.png',
     './material/multi_dice/dice_image/slow_dice.png',
     './material/multi_dice/dice_information/num_1.png',
     './material/multi_dice/dice_information/num_2.png',
