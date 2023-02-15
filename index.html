@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리듬마블 주사위</title>
+    <link href="material/dice style.css" rel="stylesheet">
+    <style>
+        div.pop{
+            margin: auto;
+            height: 200px;
+            width: 500px;
+            z-index: 3;
+        }
+
+        button.pop_button{
+            width: 70%;
+            height: 35px;
+            display: block;
+            margin: 10px auto;
+            font-size: 14pt;
+        }
+
+        button#pop_b_cancel{
+            background-color: brown;
+            color: white;
+        }
+
+        button#pop_b_cancel:hover{
+            background-color: crimson;
+        }
+
+        div.pop_head{
+            margin-top: 50%;
+            width: 500px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            border-radius: 20px 20px 0 0;
+            background-color: brown;
+        }
+
+        div.pop_body{
+            width: 480px;
+            height: 150px;
+            padding: 10px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <div class="pop" id="pop_roulette_select">
+        <div class="pop_head">
+            김편집 리듬마블용 주사위 콜렉션
+        </div>
+        <div class="pop_body">
+            <button class="pop_button" id="pop_b_odd" onclick="location.href='./main_multi.html'">일반 + 더블 + 특수 주사위</button>
+            <button class="pop_button" id="pop_b_even" onclick="location.href='./main_legacy.html'">일반 + 더블 주사위</button>
+            <button class="pop_button" id="pop_b_slow" onclick="location.href='./main_card.html'">카드 뽑기 룰</button>
+        </div>
+    </div>
+</body>
+</html>
