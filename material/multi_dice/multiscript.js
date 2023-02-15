@@ -119,7 +119,7 @@ function roll(){
         setTimeout(function(){dice.classList.remove('ready'); dice.classList.add('reroll')},100);
         var falsenumber = setInterval(function(){
             f_num = math.randomInt(1,5);
-            document.getElementById('s_number').innerHTML = f_num;
+            document.getElementById('s_number').innerText = f_num;
         }, 20);
         //오디오 재생//
         r_sound.currentTime = 0;
@@ -138,7 +138,7 @@ function roll(){
         before = x;
         var falsenumber = setInterval(function(){
             f_num = math.randomInt(1,5);
-            document.getElementById('s_number').innerHTML = f_num;
+            document.getElementById('s_number').innerText = f_num;
         }, 20);
         //오디오 재생//
         r_sound.currentTime = 0;
@@ -161,9 +161,9 @@ function roll(){
         var falsenumber = setInterval(function(){
             sign_number();
             if(f_num == 0){
-                document.getElementById('s_number').innerHTML = '-1';
+                document.getElementById('s_number').innerText = '-1';
             } else{
-                document.getElementById('s_number').innerHTML = f_num;
+                document.getElementById('s_number').innerText = f_num;
             }
         }, 20);
         //오디오 재생//
@@ -329,29 +329,29 @@ function setnum(m_check){
             document.getElementById('s_number').innerText = '-1';
             if(m_check == 1){
                 now_mone += 1;
-                document.getElementById('sta_mone').innerHTML = now_mone;
+                document.getElementById('sta_mone').innerText = now_mone;
             };
         } else if (x == 1){
             document.getElementById('s_number').innerText = '1';
             now_one += 1;
-            document.getElementById('sta_one').innerHTML = now_one;
+            document.getElementById('sta_one').innerText = now_one;
         } else if (x == 2){
             document.getElementById('s_number').innerText = '2';
             now_two += 1;
-            document.getElementById('sta_two').innerHTML = now_two;
+            document.getElementById('sta_two').innerText = now_two;
         } else if (x == 3){
             document.getElementById('s_number').innerText = '3';
             now_three += 1;
-            document.getElementById('sta_three').innerHTML = now_three;
+            document.getElementById('sta_three').innerText = now_three;
         } else if (x == 4){
             document.getElementById('s_number').innerText = '4';
             now_four += 1;
-            document.getElementById('sta_four').innerHTML = now_four;
+            document.getElementById('sta_four').innerText = now_four;
         } else if (x == 5){
             document.getElementById('s_number').innerText = '+1';
             if(m_check == 1){
                 now_five += 1;
-                document.getElementById('sta_five').innerHTML = now_five;
+                document.getElementById('sta_five').innerText = now_five;
             };
         } else{
             document.getElementById('s_number').innerText = '?';
@@ -359,33 +359,33 @@ function setnum(m_check){
     }
     var dice_meter = ((-1*now_mone)+(1*now_one)+(2*now_two)+(3*now_three)+(4*now_four))/(now_mone+now_one+now_two+now_three+now_four)
     if (dice_meter < 2.0){
-        document.getElementById('sta_type').innerHTML = '억까';
+        document.getElementById('sta_type').innerText = '억까';
         document.getElementById('sta_type').style.color = 'red';
-        document.getElementById('sta_meter').innerHTML = math.round(dice_meter, 2);
+        document.getElementById('sta_meter').innerText = math.round(dice_meter, 2);
         document.getElementById('sta_meter').style.color = 'red';
     } else if (2.2 < dice_meter){
-        document.getElementById('sta_type').innerHTML = '억빠';
+        document.getElementById('sta_type').innerText = '억빠';
         document.getElementById('sta_type').style.color = 'dodgerblue';
-        document.getElementById('sta_meter').innerHTML = math.round(dice_meter, 2);
+        document.getElementById('sta_meter').innerText = math.round(dice_meter, 2);
         document.getElementById('sta_meter').style.color = 'dodgerblue';
     } else if (2.0 <= dice_meter <= 2.2){
-        document.getElementById('sta_type').innerHTML = '정속주행';
+        document.getElementById('sta_type').innerText = '정속주행';
         document.getElementById('sta_type').style.color = 'black';
-        document.getElementById('sta_meter').innerHTML = math.round(dice_meter, 2);
+        document.getElementById('sta_meter').innerText = math.round(dice_meter, 2);
         document.getElementById('sta_meter').style.color = 'black';
     }
 };
 
 const proreset = () => {
     now_mone = now_one = now_two = now_three = now_four = 0;
-    document.getElementById('sta_mone').innerHTML = 0;
-    document.getElementById('sta_one').innerHTML = 0;
-    document.getElementById('sta_two').innerHTML = 0;
-    document.getElementById('sta_three').innerHTML = 0;
-    document.getElementById('sta_four').innerHTML = 0;
-    document.getElementById('sta_type').innerHTML = '정속주행';
+    document.getElementById('sta_mone').innerText = 0;
+    document.getElementById('sta_one').innerText = 0;
+    document.getElementById('sta_two').innerText = 0;
+    document.getElementById('sta_three').innerText = 0;
+    document.getElementById('sta_four').innerText = 0;
+    document.getElementById('sta_type').innerText = '정속주행';
     document.getElementById('sta_type').style.color = 'black';
-    document.getElementById('sta_meter').innerHTML = math.round(dice_meter, 2);
+    document.getElementById('sta_meter').innerText = 0;
     document.getElementById('sta_meter').style.color = 'black';
 }
 
@@ -393,13 +393,13 @@ const proreset = () => {
 function setdouble(){
     if (before == x){
         //주사위 숫자 같을 경우 더블 표시//
-        document.getElementById('s_number').innerHTML += ' 더블'
+        document.getElementById('s_number').innerText += ' 더블'
     } else{
         //아닐 경우 다른 숫자 표시//
         if (x == 0){
-            document.getElementById('s_number').innerHTML += ' -1';
+            document.getElementById('s_number').innerText += ' -1';
         } else{
-            document.getElementById('s_number').innerHTML += ' '+x;
+            document.getElementById('s_number').innerText += ' '+x;
         }
     };
 };
@@ -441,7 +441,7 @@ function dividedice(){
     document.getElementById('dice_pan').innerHTML += '<div id="status"><div id="s_number">?</div></div>';
     //버튼 이미지, 텍스트 교체//
     document.getElementById('ddimg').innerHTML = '<img src="./material/single_dice.png" width="50px">';
-    document.getElementById('ddtext').innerHTML = '주사위 합치기';
+    document.getElementById('ddtext').innerText = '주사위 합치기';
     //버튼 누를 시 원래대로 돌아가도록 설정//
     document.getElementById('dice_pan').setAttribute('onclick', 'doubleroll()');
     document.getElementById('double').setAttribute('onclick', 'fusiondice()');
@@ -450,19 +450,19 @@ function dividedice(){
     var dice_d2 = document.getElementById('dice_d2');
     //확률 표시 상태에서 돌아갈 시 원상복구//
     document.getElementById('but_selectdice').setAttribute('onclick', 'sdice()');
-    document.getElementById('iftext').innerHTML = '주사위 선택'
+    document.getElementById('iftext').innerText = '주사위 선택'
 };
 function fusiondice(){
     if(document.getElementById('dice_pan').className == 'shop'){
         document.getElementById('dice_pan').classList.remove('shop');
-        document.getElementById('ddtext').innerHTML = '주사위 나누기';
+        document.getElementById('ddtext').innerText = '주사위 나누기';
     }
     //단독 주사위 표시//
     document.getElementById('dice_pan').innerHTML = '<div id="dice" class="ready single"><div id="dice_1"><img src="./material/num_1.png" id="img_1" /></div><div id="dice_2"><img src="./material/num_2.png" id="img_2" /></div><div id="dice_3"><img src="./material/num_3.png" id="img_3" /></div><div id="dice_4"><img src="./material/num_4.png" id="img_4" /></div><div id="dice_5"><img src="./material/num_nugul.png" id="img_5" /></div><div id="dice_6"><img src="./material/num_back.png" id="img_6" /></div></div>';
     document.getElementById('dice_pan').innerHTML += '<div id="status"><div id="s_number">?</div></div>';
     //버튼 이미지, 텍스트 교체//
     document.getElementById('ddimg').innerHTML = '<img src="./material/double_dice.png" width="50px">';
-    document.getElementById('ddtext').innerHTML = '주사위 나누기';
+    document.getElementById('ddtext').innerText = '주사위 나누기';
     //버튼 누를 시 원래대로 돌아가도록 설정//
     setTimeout(function(){
         document.getElementById('dice_pan').setAttribute('onclick', 'roll()'); document.getElementById('double').setAttribute('onclick', 'dividedice()');
@@ -471,7 +471,7 @@ function fusiondice(){
     dice = document.getElementById('dice');
     //확률 표시 상태에서 돌아갈 시 원상복구//
     document.getElementById('but_selectdice').setAttribute('onclick', 'sdice()');
-    document.getElementById('iftext').innerHTML = '주사위 선택'
+    document.getElementById('iftext').innerText = '주사위 선택'
 };
 //확률 표시를 위한 function//
 function sdice(){
@@ -485,8 +485,8 @@ function sdice(){
     document.getElementById('double').setAttribute('onclick', '');
     //원상복구를 위한 버튼 교체//
     document.getElementById('but_selectdice').setAttribute('onclick', 'fusiondice()');
-    document.getElementById('ddtext').innerHTML = '클릭 불가';
-    document.getElementById('iftext').innerHTML = 'Go Back';
+    document.getElementById('ddtext').innerText = '클릭 불가';
+    document.getElementById('iftext').innerText = 'Go Back';
 };
 //첫 주사위 굴리기//
 function dice_d1roll(){
@@ -608,7 +608,7 @@ const dicemarket = (num) => {
     switch (num){
         case 1:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/odd_dice.png');
-            document.getElementById('info_dicename').innerHTML = '홀수 주사위';
+            document.getElementById('info_dicename').innerText = '홀수 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
@@ -617,7 +617,7 @@ const dicemarket = (num) => {
             break
         case 2:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/even_dice.png');
-            document.getElementById('info_dicename').innerHTML = '짝수 주사위';
+            document.getElementById('info_dicename').innerText = '짝수 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back2.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
@@ -626,7 +626,7 @@ const dicemarket = (num) => {
             break
         case 3:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/golden_dice.png');
-            document.getElementById('info_dicename').innerHTML = '황금열쇠 주사위';
+            document.getElementById('info_dicename').innerText = '황금열쇠 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_goldback.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_goldback.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_goldgo.png');
@@ -635,7 +635,7 @@ const dicemarket = (num) => {
             break
         case 4:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/daruma_dice.png');
-            document.getElementById('info_dicename').innerHTML = '내맘대로 주사위';
+            document.getElementById('info_dicename').innerText = '내맘대로 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_darumatsu.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_darumatsu.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_darumapyun.png');
@@ -644,7 +644,7 @@ const dicemarket = (num) => {
             break
         case 5:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/slow_dice.png');
-            document.getElementById('info_dicename').innerHTML = '저속 주사위';
+            document.getElementById('info_dicename').innerText = '저속 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
@@ -653,7 +653,7 @@ const dicemarket = (num) => {
             break
         case 6:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/fast_dice.png');
-            document.getElementById('info_dicename').innerHTML = '고속 주사위';
+            document.getElementById('info_dicename').innerText = '고속 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
@@ -662,7 +662,7 @@ const dicemarket = (num) => {
             break
         case 7:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/back_dice.png');
-            document.getElementById('info_dicename').innerHTML = '후진 주사위';
+            document.getElementById('info_dicename').innerText = '후진 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_back2.png');
@@ -671,7 +671,7 @@ const dicemarket = (num) => {
             break
         case 8:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/joker_dice.png');
-            document.getElementById('info_dicename').innerHTML = '조커! 주사위';
+            document.getElementById('info_dicename').innerText = '조커! 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back4.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_back4.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
@@ -680,7 +680,7 @@ const dicemarket = (num) => {
             break
         case 9:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/shield_dice.png');
-            document.getElementById('info_dicename').innerHTML = '전진 주사위';
+            document.getElementById('info_dicename').innerText = '전진 주사위';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
@@ -689,7 +689,7 @@ const dicemarket = (num) => {
             break
         default:
             document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/none_dice.png');
-            document.getElementById('info_dicename').innerHTML = '주사위 선택하지 않음';
+            document.getElementById('info_dicename').innerText = '주사위 선택하지 않음';
             document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
             document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
             document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
