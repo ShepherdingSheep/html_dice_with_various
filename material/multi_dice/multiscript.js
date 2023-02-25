@@ -102,6 +102,8 @@ const sign_number = () => {
         f_num = math.pickRandom([1, -1, -2, -3, -4]);
     } else if (dice.classList.contains('joker')){
         f_num = math.pickRandom([-4, -4, 4, 4, 4]);
+    } else if (dice.classList.contains('edge')){
+        f_num = math.pickRandom(['뱅하싶', '디맥섬', '투온섬', '디맥섬', '투온섬']);
     } else{
         f_num = math.randomInt(0, 5);
         if (f_num == 0){
@@ -310,6 +312,20 @@ function setnum(m_check){
             default:
                 document.getElementById('s_number').innerText = '?';
         }
+    } else if (dice.classList.contains('edge')) {
+        if (x == 0){
+            document.getElementById('s_number').innerText = '뱅하싶';
+        } else if (x == 1){
+            document.getElementById('s_number').innerText = '디맥섬';
+        } else if (x == 2){
+            document.getElementById('s_number').innerText = '투온섬';
+        } else if (x == 3){
+            document.getElementById('s_number').innerText = '디맥섬';
+        } else if (x == 4){
+            document.getElementById('s_number').innerText = '투온섬';
+        } else{
+            document.getElementById('s_number').innerText = '?';
+        }
     } else if (document.getElementById('dice_pan').getAttribute('onclick') == 'doubleroll()') {
         if (x == 0){
             document.getElementById('s_number').innerText = '-1';
@@ -480,7 +496,8 @@ function sdice(){
     //확률 표시//
     document.getElementById('dice_pan').innerHTML = '<div class="dice_information"><div class="information__image"><img src="./material/multi_dice/dice_image/none_dice.png" id="dice_infoimg"></div><div class="information__text"><div class="information__name" id="info_dicename">주사위 선택하지 않음</div><div class="information__number"><img class="number__img" id="info_number_1" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_2" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_3" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_4" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_5" src="./material/multi_dice/dice_information/num_none.png"></div></div></div>';
     document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_odd" onclick="dicesetting(1)" onmouseover="dicemarket(1)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/odd_dice.png"></div><div class="dice_select" id="dice_even" onclick="dicesetting(2)" onmouseover="dicemarket(2)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/even_dice.png"></div><div class="dice_select" id="dice_golden" onclick="dicesetting(3)" onmouseover="dicemarket(3)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/golden_dice.png"></div><div class="dice_select" id="dice_daruma" onclick="dicesetting(4)" onmouseover="dicemarket(4)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/daruma_dice.png"></div></div>';
-    document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_slow" onclick="dicesetting(5)" onmouseover="dicemarket(5)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/slow_dice.png"></div><div class="dice_select" id="dice_fast" onclick="dicesetting(6)" onmouseover="dicemarket(6)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/fast_dice.png"></div><div class="dice_select" id="dice_back" onclick="dicesetting(7)" onmouseover="dicemarket(7)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/back_dice.png"></div><div class="dice_select" id="dice_joker" onclick="dicesetting(8)" onmouseover="dicemarket(8)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/joker_dice.png"></div><div class="dice_select" id="shield_joker" onclick="dicesetting(9)" onmouseover="dicemarket(9)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/shield_dice.png"></div></div>'
+    document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_slow" onclick="dicesetting(5)" onmouseover="dicemarket(5)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/slow_dice.png"></div><div class="dice_select" id="dice_fast" onclick="dicesetting(6)" onmouseover="dicemarket(6)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/fast_dice.png"></div><div class="dice_select" id="dice_back" onclick="dicesetting(7)" onmouseover="dicemarket(7)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/back_dice.png"></div><div class="dice_select" id="dice_joker" onclick="dicesetting(8)" onmouseover="dicemarket(8)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/joker_dice.png"></div></div>'
+    document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_edge" onclick="dicesetting(11)" onmouseover="dicemarket(11)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/edge_dice.png"></div><div class="dice_select" id="dice_who" onclick="dicesetting('+math.randomInt(12)+')" onmouseover="dicemarket(12)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/molu_dice.png"></div><div class="dice_select" id="shield_joker" onclick="dicesetting(9)" onmouseover="dicemarket(9)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/shield_dice.png"></div></div>'
     document.getElementById('dice_pan').setAttribute('onclick', '');
     document.getElementById('double').setAttribute('onclick', '');
     //원상복구를 위한 버튼 교체//
@@ -602,101 +619,6 @@ const prosta = () => {
 
 const proexit = () => {
     document.getElementById('alert').style.visibility = 'hidden';
-}
-
-const dicemarket = (num) => {
-    switch (num){
-        case 1:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/odd_dice.png');
-            document.getElementById('info_dicename').innerText = '홀수 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
-            break
-        case 2:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/even_dice.png');
-            document.getElementById('info_dicename').innerText = '짝수 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back2.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_null.png');
-            break
-        case 3:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/golden_dice.png');
-            document.getElementById('info_dicename').innerText = '황금열쇠 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_goldback.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_goldback.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_goldgo.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_goldgo.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_null.png');
-            break
-        case 4:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/daruma_dice.png');
-            document.getElementById('info_dicename').innerText = '내맘대로 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_darumatsu.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_darumatsu.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_darumapyun.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_darumapyun.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_null.png');
-            break
-        case 5:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/slow_dice.png');
-            document.getElementById('info_dicename').innerText = '저속 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
-            break
-        case 6:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/fast_dice.png');
-            document.getElementById('info_dicename').innerText = '고속 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            break
-        case 7:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/back_dice.png');
-            document.getElementById('info_dicename').innerText = '후진 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_back.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_back2.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_back3.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_back4.png');
-            break
-        case 8:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/joker_dice.png');
-            document.getElementById('info_dicename').innerText = '조커! 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_back4.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_back4.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            break
-        case 9:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/shield_dice.png');
-            document.getElementById('info_dicename').innerText = '전진 주사위';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_1.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_2.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_3.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_4.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_null.png');
-            break
-        default:
-            document.getElementById('dice_infoimg').setAttribute('src','./material/multi_dice/dice_image/none_dice.png');
-            document.getElementById('info_dicename').innerText = '주사위 선택하지 않음';
-            document.getElementById('info_number_1').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
-            document.getElementById('info_number_2').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
-            document.getElementById('info_number_3').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
-            document.getElementById('info_number_4').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
-            document.getElementById('info_number_5').setAttribute('src','./material/multi_dice/dice_information/num_none.png');
-            break
-    }
 }
 
 function preloading (imageArray) {

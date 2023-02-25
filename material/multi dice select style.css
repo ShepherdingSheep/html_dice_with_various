@@ -41,7 +41,7 @@
 
 .dice_select_row{
     width: 700px;
-    height: 200px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,6 +253,10 @@
     100%{
         background-color: red;
     }
+}
+
+#dice.edge > div{
+    background-image: url('./multi_dice/dice_back/back_edge.png');
 }
 
 .dice_select_row > div{
