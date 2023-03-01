@@ -621,6 +621,18 @@ const proexit = () => {
     document.getElementById('alert').style.visibility = 'hidden';
 }
 
+const ifo = () => {
+    if (document.getElementById('information').style.visibility == 'visible'){
+        ifoexit();
+    } else{
+        document.getElementById('information').style.visibility = 'visible';
+    }
+}
+
+const ifoexit = () => {
+    document.getElementById('information').style.visibility = 'hidden';
+}
+
 function preloading (imageArray) {
     let imgArr_L = imageArray.length;
     for (let i = 0; i < imgArr_L; i++) {

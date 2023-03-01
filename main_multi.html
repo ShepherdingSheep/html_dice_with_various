@@ -32,6 +32,19 @@
             <button class="sta_tail_but" id="proexit" onclick="proexit()">닫기</button>
         </div>
     </article>
+    <article id="information">
+        <div class="ifo_head">3월 2일 자 패치노트</div>
+        <div class="ifo_body">
+            <p class="sta_line" style="line-height: 30px;">신규 특수 주사위</p>
+            <p class="ifo_line">'엣지 주사위'와 '몰?루 주사위'가 추가됐습니다.</p>
+            <p class="ifo_line">'엣지 주사위' - 무인도와 뱅하싶 칸으로 이동</p>
+            <p class="ifo_line">'몰?루 주사위' - 더블을 제외한 모든 주사위를 선택</p>
+        </div>
+        <div class="ifo_tail">
+            <button class="sta_tail_but" id="ifoexit" onclick="ifoexit()">닫기</button>
+        </div>
+    </article>
+    
     <article id="dice_pan" onclick="roll()">
         <div id="dice" class="start single">
             <div id="dice_1"><img src="./material/num_1.png" id="img_1" /></div>
@@ -62,6 +75,10 @@
             <button class="button_bot" id="but_prosta" onclick="prosta()">
                 <div id="proimg"><img src="./material/probablity.png" width="50px"></div>
                 <div id="protext">주사위 현황</div>
+            </button>
+            <button class="button_bot" id="but_info" onclick="ifo()">
+                <div id="proimg"><img src="./material/num_nugul.png" width="50px"></div>
+                <div id="protext">새 기능!</div>
             </button>
         </div>
     </article>
