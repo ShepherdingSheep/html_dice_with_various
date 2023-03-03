@@ -118,47 +118,47 @@ article#dice_button{
 
 @keyframes herelight{
     0%{
-        background-color: #164e67;
+        background-color: red;
     }
 
     10%{
-        background-color: #769d30;
+        background-color: orangered;
     }
 
     20%{
-        background-color: #c8d71a;
+        background-color: yellow;
     }
 
     30%{
-        background-color: #38abda;
+        background-color: greenyellow;
     }
     
     40%{
-        background-color: #f0973b;
+        background-color: green;
     }
 
     50%{
-        background-color: #faed2f;
+        background-color: dodgerblue;
     }
 
     60%{
-        background-color: #8a2b7c;
+        background-color: blue;
     }
 
     70%{
-        background-color: #ec9b40;
+        background-color: navy;
     }
 
     80%{
-        background-color: crimson;
+        background-color: purple;
     }
 
     90%{
-        background-color: red;
+        background-color: pink;
     }
     
     100%{
-        background-color: #164e67;
+        background-color: red;
     }
 }
 

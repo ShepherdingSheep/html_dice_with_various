@@ -220,12 +220,16 @@
         background-color: black;
     }
 
-    33%{
+    15%, 35%{
         background-color: goldenrod;
     }
 
-    66%{
-        background-color: brown;
+    50%{
+        background-color: black;
+    }
+
+    65%, 85%{
+        background-color: red;
     }
 
     100%{
