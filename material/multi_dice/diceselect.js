@@ -224,13 +224,13 @@ const dicesetting = (num) => {
         case 10:
             fusiondice();
             document.getElementById('dice').className = 'ready';
-            document.getElementById('dice').classList.add('various','shield');
-            document.getElementById('img_1').setAttribute('src','./material/num_1.png');
-            document.getElementById('img_2').setAttribute('src','./material/num_2.png');
-            document.getElementById('img_3').setAttribute('src','./material/num_3.png');
-            document.getElementById('img_4').setAttribute('src','./material/num_4.png');
-            document.getElementById('img_5').setAttribute('src','./material/num_1.png');
-            document.getElementById('img_6').setAttribute('src','./material/num_4.png');
+            document.getElementById('dice').classList.add('various','nugul');
+            document.getElementById('img_1').setAttribute('src','./material/num_nugul.png');
+            document.getElementById('img_2').setAttribute('src','./material/num_nugul.png');
+            document.getElementById('img_3').setAttribute('src','./material/num_nugul.png');
+            document.getElementById('img_4').setAttribute('src','./material/num_nugul.png');
+            document.getElementById('img_5').setAttribute('src','./material/num_nugul.png');
+            document.getElementById('img_6').setAttribute('src','./material/num_nugul.png');
             break
         case 11:
             fusiondice();

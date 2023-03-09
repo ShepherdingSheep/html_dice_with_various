@@ -266,3 +266,25 @@
 .dice_select_row > div{
     cursor: pointer;
 }
+
+#dice.nugul > div{
+    background-image: url('./multi_dice/dice_back/back_nugul.png');
+    animation: nuguldice 2s linear infinite;
+}
+
+#dice.nugul.reroll > div{
+    background-image: url('./multi_dice/dice_back/back_nugul.png');
+    animation: nuguldice 0.3s linear infinite;
+}
+
+@keyframes nuguldice{
+    0%{
+        background-color: gray;
+    }
+    50%{
+        background-color: white;
+    }
+    100%{
+        background-color: gray;
+    }
+}
