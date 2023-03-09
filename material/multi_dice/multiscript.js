@@ -112,6 +112,8 @@ const sign_number = () => {
         f_num = math.pickRandom([-4, -4, 4, 4, 4]);
     } else if (dice.classList.contains('edge')){
         f_num = math.pickRandom(['뱅하싶', '디맥섬', '투온섬', '디맥섬', '투온섬']);
+    } else if (dice.classList.contains('nugul')){
+        f_num = '+1';
     } else{
         f_num = math.randomInt(0, 5);
         if (f_num == 0){
@@ -331,6 +333,20 @@ function setnum(m_check){
             document.getElementById('s_number').innerText = '디맥섬';
         } else if (x == 4){
             document.getElementById('s_number').innerText = '투온섬';
+        } else{
+            document.getElementById('s_number').innerText = '?';
+        }
+    } else if (dice.classList.contains('nugul')) {
+        if (x == 0){
+            document.getElementById('s_number').innerText = '+1';
+        } else if (x == 1){
+            document.getElementById('s_number').innerText = '+1';
+        } else if (x == 2){
+            document.getElementById('s_number').innerText = '+1';
+        } else if (x == 3){
+            document.getElementById('s_number').innerText = '+1';
+        } else if (x == 4){
+            document.getElementById('s_number').innerText = '+1';
         } else{
             document.getElementById('s_number').innerText = '?';
         }
