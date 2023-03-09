@@ -1,11 +1,19 @@
 var x = y = z = 0;
 var r_sound = new Audio('./material/rolling.wav');
 var d_sound = new Audio('./material/rolling_done.wav');
-var bonk_sound = new Audio('./material/bonk.mp3')
+var bonk_sound = new Audio('./material/bonk.mp3');
 var n = 0;
 var before = 0;
 var dice = document.getElementById('dice');
 let now_mone = now_one = now_two = now_three = now_four = now_five = 0;
+
+const preloading_s = () => {
+    r_sound.preload = 'auto';
+    d_sound.preload = 'auto';
+    bonk_sound.preload = 'auto';
+}
+
+preloading_s();
 
 const dice_roulette = (shield) => {
             //숫자 추첨//
@@ -497,7 +505,7 @@ function sdice(){
     document.getElementById('dice_pan').innerHTML = '<div class="dice_information"><div class="information__image"><img src="./material/multi_dice/dice_image/none_dice.png" id="dice_infoimg"></div><div class="information__text"><div class="information__name" id="info_dicename">주사위 선택하지 않음</div><div class="information__number"><img class="number__img" id="info_number_1" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_2" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_3" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_4" src="./material/multi_dice/dice_information/num_none.png"><img class="number__img" id="info_number_5" src="./material/multi_dice/dice_information/num_none.png"></div></div></div>';
     document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_odd" onclick="dicesetting(1)" onmouseover="dicemarket(1)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/odd_dice.png"></div><div class="dice_select" id="dice_even" onclick="dicesetting(2)" onmouseover="dicemarket(2)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/even_dice.png"></div><div class="dice_select" id="dice_golden" onclick="dicesetting(3)" onmouseover="dicemarket(3)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/golden_dice.png"></div><div class="dice_select" id="dice_daruma" onclick="dicesetting(4)" onmouseover="dicemarket(4)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/daruma_dice.png"></div></div>';
     document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_slow" onclick="dicesetting(5)" onmouseover="dicemarket(5)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/slow_dice.png"></div><div class="dice_select" id="dice_fast" onclick="dicesetting(6)" onmouseover="dicemarket(6)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/fast_dice.png"></div><div class="dice_select" id="dice_back" onclick="dicesetting(7)" onmouseover="dicemarket(7)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/back_dice.png"></div><div class="dice_select" id="dice_joker" onclick="dicesetting(8)" onmouseover="dicemarket(8)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/joker_dice.png"></div></div>'
-    document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_edge" onclick="dicesetting(11)" onmouseover="dicemarket(11)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/edge_dice.png"></div><div class="dice_select" id="dice_who" onclick="dicesetting('+math.randomInt(12)+')" onmouseover="dicemarket(12)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/molu_dice.png"></div><div class="dice_select" id="shield_joker" onclick="dicesetting(9)" onmouseover="dicemarket(9)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/shield_dice.png"></div></div>'
+    document.getElementById('dice_pan').innerHTML += '<div class="dice_select_row"><div class="dice_select" id="dice_edge" onclick="dicesetting(11)" onmouseover="dicemarket(11)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/edge_dice.png"></div><div class="dice_select" id="dice_who" onclick="dicesetting('+math.randomInt(1,12)+')" onmouseover="dicemarket(12)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/molu_dice.png"></div><div class="dice_select" id="shield_joker" onclick="dicesetting(9)" onmouseover="dicemarket(9)" onmouseleave="dicemarket(0)"><img src="./material/multi_dice/dice_image/shield_dice.png"></div></div>'
     document.getElementById('dice_pan').setAttribute('onclick', '');
     document.getElementById('double').setAttribute('onclick', '');
     //원상복구를 위한 버튼 교체//
